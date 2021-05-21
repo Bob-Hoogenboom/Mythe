@@ -2,24 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VirtualInputManager : MonoBehaviour
+
+namespace Player
 {
-    public static VirtualInputManager Instance = null;
-
-    private void Awake()
+    public class VirtualInputManager : Singleton<VirtualInputManager>
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-
+        public bool _MoveRight;
+        public bool _MoveLeft;
     }
-
-    public bool _MoveRight;
-    public bool _MoveLeft; 
-
 }
