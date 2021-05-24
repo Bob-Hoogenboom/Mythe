@@ -4,16 +4,30 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float _Speed;
+    [SerializeField] float _Speed = 5f;
+    [SerializeField] float _JumpHeight = 5f;
+    [SerializeField] Rigidbody _Rb;
+    [SerializeField] Vector2 _Movement;
 
+    private void Start()
+    {
+        _Rb = this.GetComponent<Rigidbody>();
+    }
 
-    
     void Update()
     {
-        var movement = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * _Speed;
-
-        if (!Mathf.Approximately(0, movement))
-            transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+        _Movement = new Vector2(Input.GetAxis("Horizontal"), 0);
     }
+
+    private void FixedUpdate()
+    {
+        CharMove(_Movement);
+    }
+
+    private void CharMove(Vector2 dir)
+    {
+        _Rb.MovePosition((Vector2)transform.position + (dir * _Speed * Time.deltaTime));
+    }
+
+
 }
