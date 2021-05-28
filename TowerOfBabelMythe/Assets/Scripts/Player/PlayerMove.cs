@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] float _speed = 5f;
+    [Header("Horizontal Movement")]
+    [SerializeField] float _moveSpeed = 10f;
+    [SerializeField] Vector2 _dir;
 
+
+    [Header("Components")]
     [SerializeField] Rigidbody _rb;
 
-    void Start()
+    private void Update()
     {
-        _rb = GetComponent<Rigidbody>();
+        _dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
+
+    private void FixedUpdate()
+    {
+        MoveCharacter(_dir.x);
+    }
+
+    void MoveCharacter(float horizontal)
+    {
+        _rb.AddForce(Vector2.right * horizontal * _moveSpeed);
     }
 
 
-    void Update()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-
-        _rb.velocity = new Vector3(moveHorizontal, _rb.velocity.y, 0) * _speed;
-
-        
-    }
 }
+
+
