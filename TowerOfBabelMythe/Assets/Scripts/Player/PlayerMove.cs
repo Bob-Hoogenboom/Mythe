@@ -75,6 +75,7 @@ public class PlayerMove : MonoBehaviour
 
     void Jump()
     {
+        _anime.SetFloat("vertical", Mathf.Abs(_rb.velocity.y));
         _rb.velocity = new Vector2(_rb.velocity.x, 0);
         _rb.AddForce(Vector2.up * _jumpForce, ForceMode.Impulse);
         _jumpTimer = 0;
