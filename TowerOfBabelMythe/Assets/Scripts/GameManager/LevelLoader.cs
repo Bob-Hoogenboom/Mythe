@@ -18,8 +18,8 @@ namespace Assets.Scripts.GameManager
         void Awake()
         {
             CanvasGroupSetUp();
-            StartCoroutine(LoadScene(Levels.level1Platforming));
         }
+
 
         public IEnumerator LoadScene(Levels targetLevel)
         {

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using GameSystems;
 using UnityEngine;
@@ -12,6 +13,8 @@ namespace Assets.Scripts.GameManager
 
         private Levels currenLevel;
         private GameState currentState;
+        
+        private Dictionary<Levels,Action<LevelType>> myLevelIndex = new Dictionary<Levels, Action<LevelType>>();
 
         public float requestedTime;
 
@@ -35,6 +38,15 @@ namespace Assets.Scripts.GameManager
             UpdateState(GameState.MainMenu);
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                UpdateState(GameState.Loading);
+                StartCoroutine(levelLoader.LoadScene(Levels.level1Platforming));
+            }
+        }
+
         private void UpdateState(GameState newState)
         {
             currentState = newState;
@@ -47,10 +59,12 @@ namespace Assets.Scripts.GameManager
                     break;
                 case GameState.Loading:
                     timer.PauseTimer();
+                    Debug.Log("Timer Paused, currently loading");
                     break;
                 case GameState.Paused:
                     break;
                 case GameState.Playing:
+                    Debug.Log("Timer active, load complete");
                     timer.StartTimer();
                     break;
             }

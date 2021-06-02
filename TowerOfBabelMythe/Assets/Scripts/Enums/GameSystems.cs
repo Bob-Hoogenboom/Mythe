@@ -11,6 +11,13 @@
         level3Combat
     }
 
+    public enum LevelType
+    {
+        Menu,
+        Platformer,
+        Combat
+    }
+
     public enum GameState
     {
         MainMenu,

@@ -4,55 +4,40 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private Transform _feetPos;
-    [SerializeField] private LayerMask _groundLayer;
-    [SerializeField] private float _checkRadius;
     [SerializeField] private float _speed;
-    private Rigidbody _rb;
-    private bool isGrounded;
+    private Transform _tower;
+    public Rigidbody rb;
+    private float _distance;
 
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody>();
+        _tower = GameObject.FindGameObjectWithTag("Tower").transform;
+        _distance = Vector3.Distance(this.transform.position, _tower.position);
     }
 
     private void FixedUpdate()
     {
+        //rb.centerOfMass = new Vector3(_tower.position.x, this.transform.position.y, _tower.position.z);
         CharacterMovement(InputParse());
+    }
+
+    private void LateUpdate()
+    {
+        
     }
 
     private void Update()
     {
-        Debug.Log(GroundCheck());
+        
     }
 
     private void CharacterMovement(float dir)
     {
-        _rb.velocity = new Vector2(dir * _speed, _rb.velocity.y);
+        this.transform.RotateAround(_tower.position, Vector3.up, dir * _speed * Time.deltaTime * -1);
     }
 
     private float InputParse()
     {
         return Input.GetAxisRaw("Horizontal");
-    }
-
-    private bool GroundCheck()
-    {
-        Collider[] col = Physics.OverlapSphere(_feetPos.position, _checkRadius, _groundLayer);
-        foreach(Collider overLap in col)
-        {
-            Debug.Log(overLap.name);
-            Debug.Log(overLap.gameObject.layer);
-            if(overLap.gameObject.layer == 8)
-            {
-                Debug.Log("HEY IT'S TRUE");
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        return false;
     }
 }

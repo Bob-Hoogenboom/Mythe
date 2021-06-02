@@ -7,6 +7,7 @@ namespace Assets.Scripts.GameManager
     {
         private bool _isTimerRunning = false;
         private bool _isTimeSet = false;
+        private bool _isTimerDone = false;
         public float currentTime;
 
         private void Start()
@@ -24,7 +25,13 @@ namespace Assets.Scripts.GameManager
             if(b)
             {
                 currentTime -= Time.deltaTime;
-            }    
+                if (currentTime <= 0 && !_isTimerDone)
+                {
+                    Debug.Log("Tower go bye bye");
+                    _isTimerRunning = false;
+                    _isTimerDone = true;
+                }
+            }
         }
 
         public float GetTimer()
