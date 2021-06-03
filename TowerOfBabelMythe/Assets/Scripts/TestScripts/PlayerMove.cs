@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    private Transform _tower;
-    public Rigidbody rb;
+    [SerializeField] private Transform _tower;
     private float _distance;
 
     private void Awake()
     {
+        print("Uitgevoerd");
         _tower = GameObject.FindGameObjectWithTag("Tower").transform;
         _distance = Vector3.Distance(this.transform.position, _tower.position);
     }
@@ -19,16 +19,6 @@ public class PlayerMove : MonoBehaviour
     {
         //rb.centerOfMass = new Vector3(_tower.position.x, this.transform.position.y, _tower.position.z);
         CharacterMovement(InputParse());
-    }
-
-    private void LateUpdate()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
     }
 
     private void CharacterMovement(float dir)

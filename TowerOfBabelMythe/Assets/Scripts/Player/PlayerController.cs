@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Horizontal Movement")]
     [SerializeField] bool _faceRight = true;
@@ -113,7 +113,6 @@ public class PlayerMove : MonoBehaviour
             }
         }
     }
-
 
 
     void FlipDirection()
