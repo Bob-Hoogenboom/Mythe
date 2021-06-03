@@ -40,8 +40,7 @@ public class PlayerController : MonoBehaviour
         {
             _jumpTimer = Time.time + _jumpDelay;
         }
-
-        _dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        _dir = GiveInput();
     }
 
 
@@ -55,8 +54,12 @@ public class PlayerController : MonoBehaviour
         PhysicsMod();
     }
 
+    public Vector2 GiveInput()
+    {
+        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
 
-    void MoveCharacter(float horizontal)
+    public void MoveCharacter(float horizontal)
     {
         _rb.AddForce(Vector2.right * horizontal * _moveSpeed);
 

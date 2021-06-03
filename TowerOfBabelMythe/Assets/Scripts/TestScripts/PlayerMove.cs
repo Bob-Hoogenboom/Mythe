@@ -21,7 +21,7 @@ public class PlayerMove : MonoBehaviour
         CharacterMovement(InputParse());
     }
 
-    private void CharacterMovement(float dir)
+    public void CharacterMovement(float dir)
     {
         this.transform.RotateAround(_tower.position, Vector3.up, dir * _speed * Time.deltaTime * -1);
     }
