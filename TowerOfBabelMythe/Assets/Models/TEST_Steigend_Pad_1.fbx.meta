@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8e2cbb13e13acb5459dd6fd816f76d13
+=======
+guid: bdeb8feee8300ac49b7345d87f776a48
+>>>>>>> Feature_Tower
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
