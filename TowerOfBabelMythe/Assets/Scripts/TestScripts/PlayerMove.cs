@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    private Transform _tower;
-    public Rigidbody rb;
+    [SerializeField] private Transform _tower;
     private float _distance;
 
     private void Awake()
     {
+        print("Uitgevoerd");
         _tower = GameObject.FindGameObjectWithTag("Tower").transform;
         _distance = Vector3.Distance(this.transform.position, _tower.position);
     }
@@ -21,17 +21,7 @@ public class PlayerMove : MonoBehaviour
         CharacterMovement(InputParse());
     }
 
-    private void LateUpdate()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
-    }
-
-    private void CharacterMovement(float dir)
+    public void CharacterMovement(float dir)
     {
         this.transform.RotateAround(_tower.position, Vector3.up, dir * _speed * Time.deltaTime * -1);
     }
