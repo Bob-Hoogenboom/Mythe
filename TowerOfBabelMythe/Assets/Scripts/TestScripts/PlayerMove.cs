@@ -17,7 +17,6 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //rb.centerOfMass = new Vector3(_tower.position.x, this.transform.position.y, _tower.position.z);
         CharacterMovement(InputParse());
     }
 

@@ -2,57 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GameSystems;
 
 public class PlayerManager : MonoBehaviour
 {
-    private Action<float> moveDelegate;
-    public Action<float> currentMovement;
-    public Action<float> combatMovement;
-    public Action<float> towerMovement;
-
-    private float inputDir;
-
-    private PlayerController combatMovementCode;
-    private PlayerMove towerMovementCode;
-
-    private float playerInput;
-
-    void Start()
+    private bool _inControl;
+    public bool inControl
     {
-        combatMovementCode = GetComponentInChildren<PlayerController>();
-        towerMovementCode = GetComponentInChildren<PlayerMove>();
-
-        combatMovement += (inputDir) =>
+        get
         {
-            combatMovementCode.MoveCharacter(inputDir);
-        };
-
-        towerMovement += (inputDir) =>
+            return _inControl;
+        }
+        set
         {
-            towerMovementCode.CharacterMovement(inputDir);
-        };
+            _inControl = value;
+        }
     }
 
-    void Update()
-    {
-        moveDelegate?.Invoke(InputParse());
-    }
-
-    private float InputParse()
-    {
-        return Input.GetAxisRaw("horizontal");
-    }
-
-
-    /*    private void setMovementFunc(LevelType targetLevel)
-        {
-            switch (targetLevel)
-            {
-                case LevelType.Platformer:
-                    break;
-                case LevelType.Combat:
-                    break;
-            }
-        }*/
+    //Implement logic that inControl will make it so the player is controllable or not.
 }

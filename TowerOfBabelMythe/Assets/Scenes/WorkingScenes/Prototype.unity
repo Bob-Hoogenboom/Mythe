@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _tower: {fileID: 4099035921789892456}
+  rb: {fileID: 0}
 --- !u!1001 &1445315102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -448,15 +448,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4689430923094223045, guid: 3622a1ef9813e8e4aa86944d41fc8cda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4689430923094223045, guid: 3622a1ef9813e8e4aa86944d41fc8cda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.95
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4689430923094223045, guid: 3622a1ef9813e8e4aa86944d41fc8cda, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.76
+      value: -53.5
       objectReference: {fileID: 0}
     - target: {fileID: 4689430923094223045, guid: 3622a1ef9813e8e4aa86944d41fc8cda, type: 3}
       propertyPath: m_LocalRotation.w
@@ -796,8 +796,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b64341e68af01a4cae41822e1db192b, type: 3}
---- !u!4 &4099035921789892456 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3695895552744623728, guid: 295e597406ae4734c92ebde3143b9a8c, type: 3}
-  m_PrefabInstance: {fileID: 840139138690726168}
-  m_PrefabAsset: {fileID: 0}

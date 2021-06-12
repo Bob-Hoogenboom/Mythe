@@ -8,93 +8,70 @@ namespace Assets.Scripts.GameManager
 {
     public class GameManager : MonoBehaviour
     {
+        [SerializeField] LevelData[] levelDatas;
+        Ui.FadeManger fadeManger;
         Timer timer;
         LevelLoader levelLoader;
-        PlayerManager playerSystem;
+        PlayerManager playerManager;
 
-        private Levels currenLevel;
-        private GameState currentState;
-        
-        private Dictionary<Levels,Action<LevelType>> myLevelIndex = new Dictionary<Levels, Action<LevelType>>();
-
+        private GameState currentState = GameState.MainMenu;
         public float requestedTime;
-
 
         private void Start()
         {
+            fadeManger = FindObjectOfType<Ui.FadeManger>();
             timer = FindObjectOfType<Timer>();
             levelLoader = FindObjectOfType<LevelLoader>();
-            playerSystem = FindObjectOfType<PlayerManager>();
 
             levelLoader.onLoad += (loadedLevel) =>
             {
                 UpdateState(GameState.Playing);
-                /*CheckNewLevel(loadedLevel);*/
-            };  
+            };
 
+            DontDestroyOnLoad(fadeManger);
             DontDestroyOnLoad(levelLoader);
             DontDestroyOnLoad(timer);
             DontDestroyOnLoad(this);
-
-            currenLevel = Levels.MainMenu;
             UpdateState(GameState.MainMenu);
 
-            myLevelIndex.Add(Levels.level1Platforming, setMovement(targetLevel: LevelType));
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                UpdateState(GameState.Loading);
-                StartCoroutine(levelLoader.LoadScene(Levels.level1Platforming));
-            }
+            fadeManger.StartCoroutine(fadeManger.FadeScreenIn(fadeManger.loadingScreen.alpha, fadeManger._fadeSpeed));
         }
 
         private void UpdateState(GameState newState)
         {
-            currentState = newState;
-
             switch (newState)
             {
                 case GameState.MainMenu:
                     timer.SetTimer(requestedTime);
-                    Debug.Log("Game Start");
                     break;
+
                 case GameState.Loading:
                     timer.PauseTimer();
-                    Debug.Log("Timer Paused, currently loading");
                     break;
+
                 case GameState.Paused:
+                    timer.PauseTimer();
                     break;
+
                 case GameState.Playing:
-                    Debug.Log("Timer active, load complete");
                     timer.StartTimer();
                     break;
             }
-            Debug.Log(newState.ToString());
         }
+    }
+}
 
-        private void OnLoadCallBack()
-        {
-            UpdateState(GameState.Playing);
-        }
+[Serializable]
+public class LevelData
+{
+    public Levels level;
+    private int index;
+    public bool isCombat;
 
-        private Action setMovement(LevelType targetLevel)
-        {
-            switch(targetLevel)
-            {
-                case LevelType.Platformer:
-                    playerSystem.currentMovement = playerSystem.towerMovement;
-                    break;
-                case LevelType.Combat:
-                    playerSystem.currentMovement = playerSystem.combatMovement;
-                    break;
-                default:
-                    break;
-            }
-            return null;
-        }
-
+    public LevelData(Levels level, int index, bool isCombat)
+    {
+        this.level = level;
+        this.index = index;
+        this.isCombat = isCombat;
     }
 }
