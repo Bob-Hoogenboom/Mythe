@@ -10,10 +10,6 @@ namespace Assets.Scripts.GameManager
         private bool _isTimerDone = false;
         public float currentTime;
 
-        private void Start()
-        {
-            _isTimerRunning = true;
-        }
 
         void Update()
         {

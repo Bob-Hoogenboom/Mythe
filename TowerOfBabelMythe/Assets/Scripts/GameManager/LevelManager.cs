@@ -1,23 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
-using GameSystems;
+using System;
 
 namespace Assets.Scripts.GameManager
 {
     public abstract class LevelManager : MonoBehaviour
     {
-        protected LevelType levelType;
-        protected Levels _levelName;
+        public Action onLevelCompletion;
 
-        void Start()
-        {
 
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        protected abstract void OnLevelComplete();
     }
 }
