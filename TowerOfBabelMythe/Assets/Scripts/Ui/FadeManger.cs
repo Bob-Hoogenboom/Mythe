@@ -19,31 +19,26 @@ namespace Assets.Scripts.Ui
         private void CanvasGroupSetUp()
         {
             loadingScreen = GetComponentInChildren<CanvasGroup>();
-            loadingScreen.alpha = 1;
             loadingScreen.interactable = false;
             loadingScreen.blocksRaycasts = false;
         }
 
-        public IEnumerator FadeScreenIn(float x, float z)
+        public IEnumerator FadeScreenIn(float z)
         {
-            Debug.Log("Beginning");
-            while (x > 0)
+            while (loadingScreen.alpha > 0)
             {
-                x -= z;
-                loadingScreen.alpha = x;
+                loadingScreen.alpha -= z;
                 yield return null;
             }
             loadingScreen.alpha = 0;
             yield return null;
-            Debug.Log("Complete");
         }
 
-        public IEnumerator FadeScreenOut(float x, float z)
+        public IEnumerator FadeScreenOut(float z)
         {
-            while (x < 1)
+            while (loadingScreen.alpha < 1)
             {
-                x += z;
-                loadingScreen.alpha = x;
+                loadingScreen.alpha += z;
                 yield return null;
             }
             loadingScreen.alpha = 1;

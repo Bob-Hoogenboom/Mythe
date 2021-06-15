@@ -19,22 +19,13 @@ namespace Assets.Scripts.GameManager
 
         private void Start()
         {
-            fadeManger = FindObjectOfType<Ui.FadeManger>();
-            timer = FindObjectOfType<Timer>();
-            levelLoader = FindObjectOfType<LevelLoader>();
-
+            DontDestroySetUp();
             levelLoader.onLoad += (loadedLevel) =>
             {
                 UpdateState(GameState.Playing);
             };
-
-            DontDestroyOnLoad(fadeManger);
-            DontDestroyOnLoad(levelLoader);
-            DontDestroyOnLoad(timer);
-            DontDestroyOnLoad(this);
+            InitialFadeIn();
             UpdateState(GameState.MainMenu);
-
-            fadeManger.StartCoroutine(fadeManger.FadeScreenIn(fadeManger.loadingScreen.alpha, fadeManger._fadeSpeed));
         }
 
         private void UpdateState(GameState newState)
@@ -58,6 +49,53 @@ namespace Assets.Scripts.GameManager
                     break;
             }
         }
+
+        private void LoadFirstLevel(LevelData targetLevel)
+        {
+            if(playerManager != null)
+            {
+                playerManager.inControl = false;
+            }
+
+            UpdateState(GameState.Loading);
+
+            timer.currentTime = requestedTime;
+            fadeManger.StartCoroutine(fadeManger.FadeScreenOut(fadeManger._fadeSpeed));
+
+            levelLoader.StartCoroutine(levelLoader.LoadScene(targetLevel.level));
+            LevelManager loadingLevel = FindObjectOfType<LevelManager>();
+            loadingLevel.onLevelCompletion += OnLevelCompletion;
+            loadingLevel.CountingEnemies();
+
+            fadeManger.StartCoroutine(fadeManger.FadeScreenIn(fadeManger._fadeSpeed));
+            playerManager = FindObjectOfType<PlayerManager>();
+            playerManager.inControl = true;
+
+            UpdateState(GameState.Playing);
+        }
+
+        private void DontDestroySetUp()
+        {
+            fadeManger = FindObjectOfType<Ui.FadeManger>();
+            timer = FindObjectOfType<Timer>();
+            levelLoader = FindObjectOfType<LevelLoader>();
+
+            DontDestroyOnLoad(fadeManger);
+            DontDestroyOnLoad(levelLoader);
+            DontDestroyOnLoad(timer);
+            DontDestroyOnLoad(this);
+        }
+
+        private void InitialFadeIn()
+        {
+            fadeManger.loadingScreen.alpha = 1;
+            fadeManger.StartCoroutine(fadeManger.FadeScreenIn(fadeManger._fadeSpeed));
+        }
+
+        private void OnLevelCompletion()
+        {
+
+        }
     }
 }
 
@@ -65,13 +103,11 @@ namespace Assets.Scripts.GameManager
 public class LevelData
 {
     public Levels level;
-    private int index;
-    public bool isCombat;
+    [SerializeField]private int index;
 
     public LevelData(Levels level, int index, bool isCombat)
     {
         this.level = level;
         this.index = index;
-        this.isCombat = isCombat;
     }
 }
