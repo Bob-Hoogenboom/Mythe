@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RotaryMovement : MonoBehaviour
 {
-    [SerializeField] GameObject _target;
-    [SerializeField] float _angle = 20f;
+    [SerializeField] GameObject _pivotPoint;
+    [SerializeField] float _speed = 5f;
 
     void Start()
     {
@@ -15,6 +15,6 @@ public class RotaryMovement : MonoBehaviour
     
     void Update()
     {
-        transform.RotateAround(_target.transform.position, Vector3.up, _angle * Time.deltaTime);
+        transform.RotateAround(_pivotPoint.transform.position, Vector3.up, _speed * Time.deltaTime);
     }
 }

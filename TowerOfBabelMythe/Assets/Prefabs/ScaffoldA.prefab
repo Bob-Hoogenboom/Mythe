@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4834145856399452763}
   - component: {fileID: 8410909488920569342}
   - component: {fileID: 6007092545828573492}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NEW_Steiger_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4527162016406630980}
-  m_Layer: 0
+  - component: {fileID: 2297356664844835112}
+  m_Layer: 8
   m_Name: ScaffoldA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,3 +113,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2297356664844835112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6801640222103616328}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.6811671, y: 3.9281359, z: 2.9745998}
+  m_Center: {x: -0.019517422, y: -0.4665923, z: 0.081017494}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2905218135495837172}
   - component: {fileID: 2305476962963917393}
   - component: {fileID: 4042618781160144539}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NEW_Hangende_Steen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 484248816102240234}
-  m_Layer: 0
+  - component: {fileID: 628772375253420757}
+  m_Layer: 8
   m_Name: HangingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,3 +113,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &628772375253420757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4615749527675855121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7776887, y: 1.1652536, z: 3.4336123}
+  m_Center: {x: -0.039443374, y: -2.034698, z: -0.0028967857}
