@@ -11,12 +11,17 @@ namespace Assets.Scripts.GameManager
         [Range(0.0f, 0.01f)]
         [SerializeField]
         public Action<Levels> onLoad;
+        AsyncOperation asyncLoadLevel;
 
         public IEnumerator LoadScene(Levels targetLevel)
         {
-            SceneManager.LoadScene(targetLevel.ToString());
+            asyncLoadLevel = SceneManager.LoadSceneAsync(targetLevel.ToString(), LoadSceneMode.Single);
+            while(!asyncLoadLevel.isDone)
+            {
+                print("Loading the Scene");
+                yield return null;
+            }
             onLoad?.Invoke(targetLevel);
-            yield return null;
         }
     }
 }
