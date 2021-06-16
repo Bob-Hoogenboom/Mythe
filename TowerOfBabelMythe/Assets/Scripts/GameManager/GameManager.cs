@@ -50,7 +50,7 @@ namespace Assets.Scripts.GameManager
             }
         }
 
-        private void LoadFirstLevel(LevelData targetLevel)
+        private IEnumerator LoadLevel(LevelData targetLevel)
         {
             if(playerManager != null)
             {
@@ -59,19 +59,28 @@ namespace Assets.Scripts.GameManager
 
             UpdateState(GameState.Loading);
 
-            timer.currentTime = requestedTime;
-            fadeManger.StartCoroutine(fadeManger.FadeScreenOut(fadeManger._fadeSpeed));
+            timer.currentTime = requestedTime + 1;
+            yield return fadeManger.StartCoroutine(fadeManger.FadeScreenOut(fadeManger._fadeSpeed));
 
-            levelLoader.StartCoroutine(levelLoader.LoadScene(targetLevel.level));
+            yield return levelLoader.StartCoroutine(levelLoader.LoadScene(targetLevel.level));
+
             LevelManager loadingLevel = FindObjectOfType<LevelManager>();
+            Debug.Log(loadingLevel);
             loadingLevel.onLevelCompletion += OnLevelCompletion;
             loadingLevel.CountingEnemies();
 
-            fadeManger.StartCoroutine(fadeManger.FadeScreenIn(fadeManger._fadeSpeed));
+            yield return fadeManger.StartCoroutine(fadeManger.FadeScreenIn(fadeManger._fadeSpeed));
+
             playerManager = FindObjectOfType<PlayerManager>();
             playerManager.inControl = true;
 
             UpdateState(GameState.Playing);
+            yield return null;
+        }
+
+        public void LoadFirstLevel()
+        {
+            StartCoroutine("LoadLevel", levelDatas[0]);
         }
 
         private void DontDestroySetUp()
