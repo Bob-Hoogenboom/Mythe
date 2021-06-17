@@ -1141,6 +1141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c079b668d658f74a9875f6fad6789a8, type: 3}
+--- !u!95 &1501256600 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4126495255272880135, guid: 3622a1ef9813e8e4aa86944d41fc8cda, type: 3}
+  m_PrefabInstance: {fileID: 1763494786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1559868816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1310,6 +1315,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 8235401470843604878, guid: 3622a1ef9813e8e4aa86944d41fc8cda, type: 3}
+      propertyPath: _anime
+      value: 
+      objectReference: {fileID: 1501256600}
     - target: {fileID: 8235401470843604878, guid: 3622a1ef9813e8e4aa86944d41fc8cda, type: 3}
       propertyPath: _maxFast
       value: 30
