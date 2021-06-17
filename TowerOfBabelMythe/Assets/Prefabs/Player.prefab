@@ -198,8 +198,8 @@ MonoBehaviour:
   - {fileID: 6041129657911661546}
   - {fileID: 3473798115772089787}
   m_Bounds:
-    m_Center: {x: 0.0013443232, y: -0.00000023841858, z: 0}
-    m_Extent: {x: 1.0986549, y: 1.4799995, z: 0}
+    m_Center: {x: 0.0013531446, y: -0.00000071525574, z: 0}
+    m_Extent: {x: 1.0986631, y: 1.4799995, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &1566879444962457512
@@ -336,8 +336,8 @@ MonoBehaviour:
   - {fileID: 3679737978524521071}
   - {fileID: 1450674191347891897}
   m_Bounds:
-    m_Center: {x: -0.0006353855, y: -0.00000023841858, z: 0}
-    m_Extent: {x: 1.0643649, y: 2.2149997, z: 0}
+    m_Center: {x: -0.00065004826, y: -0.00000071525574, z: 0}
+    m_Extent: {x: 1.0643649, y: 2.215, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &2859786514354639340
@@ -523,8 +523,8 @@ MonoBehaviour:
   - {fileID: 1850776440410781451}
   - {fileID: 6737478253477371174}
   m_Bounds:
-    m_Center: {x: -0.00000029802322, y: 0.0019496679, z: 0}
-    m_Extent: {x: 0.9549997, y: 1.9185995, z: 0}
+    m_Center: {x: -0.00000011920929, y: 0.0019493103, z: 0}
+    m_Extent: {x: 0.95500016, y: 1.9185994, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &3583258378353712785
@@ -782,8 +782,8 @@ MonoBehaviour:
   - {fileID: 6463236385905301857}
   - {fileID: 5803184427486190298}
   m_Bounds:
-    m_Center: {x: 0.00071048737, y: 0.0046703815, z: 0}
-    m_Extent: {x: 0.78094995, y: 2.0203302, z: 0}
+    m_Center: {x: 0.00071030855, y: 0.004670143, z: 0}
+    m_Extent: {x: 0.78095025, y: 2.02033, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &4570112995964064829
@@ -974,7 +974,7 @@ MonoBehaviour:
   - {fileID: 4935441532655313442}
   - {fileID: 2411154992128007909}
   m_Bounds:
-    m_Center: {x: 0.0001296997, y: -0.0038102865, z: 0}
+    m_Center: {x: 0.000114798546, y: -0.003811717, z: 0}
     m_Extent: {x: 0.8845501, y: 1.1718798, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   - {fileID: 3114605380963744969}
   - {fileID: 3444053671346187308}
   m_Bounds:
-    m_Center: {x: -0.0033448935, y: 0.0020942688, z: 0}
+    m_Center: {x: -0.0033293962, y: 0.0020942688, z: 0}
     m_Extent: {x: 0.9016545, y: 1.7379056, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1406,7 +1406,7 @@ GameObject:
   - component: {fileID: 200176192}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
