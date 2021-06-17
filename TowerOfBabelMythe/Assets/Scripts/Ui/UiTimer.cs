@@ -7,14 +7,13 @@ namespace Assets.Scripts.Ui
     public class UiTimer : MonoBehaviour
     {
         private GameManager.Timer _timer;
-        [SerializeField] private Text _displayTime;
+        [SerializeField]private TMPro.TextMeshProUGUI _displayTime;
 
         void Awake()
         {
             _timer = FindObjectOfType<GameManager.Timer>();
         }
 
-        // Update is called once per frame
         void Update()
         {
             _displayTime.text = TimeFormatter(_timer.GetTimer());
@@ -25,7 +24,7 @@ namespace Assets.Scripts.Ui
             int intTime = (int)f;
             int minutes = intTime / 60;
             int seconds = intTime % 60;
-            return string.Format("Time: {0:00}:{1:00}", minutes, seconds);
+            return string.Format("{0:00}:{1:00}", minutes, seconds);
         }
     }
 }
