@@ -3,18 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  tags: []
-=======
   tags:
   - Tower
   - Terrain
->>>>>>> Stashed changes
-=======
-  tags:
-  - Terrain
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
