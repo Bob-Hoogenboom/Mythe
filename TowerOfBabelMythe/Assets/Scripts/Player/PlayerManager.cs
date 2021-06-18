@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    private bool _inControl;
+    private PlayerController controlScript;
+    private bool _inControl = false;
     public bool inControl
     {
         get
@@ -15,8 +16,44 @@ public class PlayerManager : MonoBehaviour
         set
         {
             _inControl = value;
+            controlScript.enabled = value;
+        }
+    }
+    private int _health;
+    public int health
+    {
+        get
+        {
+            return _health;
+        }
+        set
+        {
+            _health = value;
+            if (_health >= 0)
+            {
+                Die();
+            }
+        }
+    }
+    public bool atDoor = false;
+
+    private void Awake()
+    {
+        controlScript = GetComponent<PlayerController>();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.W)&& atDoor)
+        {
+            FindObjectOfType<Assets.Scripts.GameManager.LevelManager>().onLevelCompletion();
+            atDoor = false;
         }
     }
 
-    //Implement logic that inControl will make it so the player is controllable or not.
+    public void Die()
+    {
+        //I fuckin' died;
+        Debug.Log("Ded");
+    }
 }

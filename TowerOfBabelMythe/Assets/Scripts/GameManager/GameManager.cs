@@ -14,6 +14,7 @@ namespace Assets.Scripts.GameManager
         LevelLoader levelLoader;
         PlayerManager playerManager;
 
+        private int _currentLevelIndex;
         private GameState currentState = GameState.MainMenu;
         public float requestedTime;
 
@@ -68,6 +69,7 @@ namespace Assets.Scripts.GameManager
             Debug.Log(loadingLevel);
             loadingLevel.onLevelCompletion += OnLevelCompletion;
             loadingLevel.CountingEnemies();
+            _currentLevelIndex = targetLevel.index;
 
             yield return fadeManger.StartCoroutine(fadeManger.FadeScreenIn(fadeManger._fadeSpeed));
 
@@ -103,7 +105,7 @@ namespace Assets.Scripts.GameManager
 
         private void OnLevelCompletion()
         {
-
+            StartCoroutine("LoadLevel", levelDatas[_currentLevelIndex + 1]);
         }
     }
 }
@@ -112,7 +114,7 @@ namespace Assets.Scripts.GameManager
 public class LevelData
 {
     public Levels level;
-    [SerializeField]private int index;
+    public int index;
 
     public LevelData(Levels level, int index, bool isCombat)
     {
