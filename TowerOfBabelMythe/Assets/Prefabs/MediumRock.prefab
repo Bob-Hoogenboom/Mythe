@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6501107175907199450}
   m_Layer: 8
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7219160466332307854}
   m_Layer: 8
   m_Name: MediumRock
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
