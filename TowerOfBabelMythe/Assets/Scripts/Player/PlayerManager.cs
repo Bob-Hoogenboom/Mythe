@@ -35,13 +35,23 @@ public class PlayerManager : MonoBehaviour
             }
         }
     }
+    public bool atDoor = false;
 
     private void Awake()
     {
         controlScript = GetComponent<PlayerController>();
     }
 
-    private void Die()
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.W)&& atDoor)
+        {
+            FindObjectOfType<Assets.Scripts.GameManager.LevelManager>().onLevelCompletion();
+            atDoor = false;
+        }
+    }
+
+    public void Die()
     {
         //I fuckin' died;
         Debug.Log("Ded");

@@ -13,7 +13,7 @@ public class CameraFollower : MonoBehaviour
     private void Start()
     { 
         threshold = calculateThreshold();
-        rb = targetObject.GetComponent<Rigidbody>();
+        rb = targetObject.GetComponentInParent<Rigidbody>();
     }
 
     private void FixedUpdate()
@@ -31,7 +31,7 @@ public class CameraFollower : MonoBehaviour
         {
             newPosition.y = follow.y;
         }
-        float moveSpeed = rb.velocity.magnitude > speed ? rb.velocity.magnitude : speed;
+        float moveSpeed = Mathf.Abs(rb.velocity.x) > speed ? Mathf.Abs(rb.velocity.x) : speed;
         transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime);
     }
 

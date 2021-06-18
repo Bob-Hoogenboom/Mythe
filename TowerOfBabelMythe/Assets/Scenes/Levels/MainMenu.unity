@@ -1063,6 +1063,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1803534178286525092, guid: dbc90232ed158974683eb14faecaceea, type: 3}
+      propertyPath: levelDatas.Array.data[0].index
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803534178286525092, guid: dbc90232ed158974683eb14faecaceea, type: 3}
+      propertyPath: levelDatas.Array.data[1].index
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8331520386367651136, guid: dbc90232ed158974683eb14faecaceea, type: 3}
       propertyPath: m_RootOrder
       value: 5
