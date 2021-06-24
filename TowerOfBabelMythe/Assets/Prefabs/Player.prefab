@@ -1405,6 +1405,7 @@ GameObject:
   - component: {fileID: 8235401470843604878}
   - component: {fileID: 200176192}
   - component: {fileID: 1791677703635553514}
+  - component: {fileID: 7419082411276719496}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1517,3 +1518,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atDoor: 0
+--- !u!114 &7419082411276719496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401837612742352132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26829346f4d52c44a516a23873a509e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 100
