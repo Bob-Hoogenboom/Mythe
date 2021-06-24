@@ -7,24 +7,17 @@ public class PlayerAttack : MonoBehaviour
     [Header ("Attack")] 
     [SerializeField] bool _attacking = false;
 
-    [SerializeField] float _attackTimer = 0;
     [SerializeField] float _attackCd = .35f;
-    
+    [SerializeField] int _damageNumber = 1;
 
     [SerializeField] Transform hitPoint;
     [SerializeField] float radius;
 
     [SerializeField] Animator _anime;
 
-    private bool _attackTrigger = false;
-
-    void Awake()
-    {
-    }
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse2) && !_attacking) //Moue2 = left mouse button
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !_attacking) //Moue0 = left mouse button
         {
             StartCoroutine("Attack");
         }
@@ -42,7 +35,9 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log(col.gameObject.name);
             if (col.gameObject.tag == "Enemy")
             {
-                Debug.Log(col.gameObject.name);
+                Enemy BEC = col.GetComponent<Enemy>();
+                BEC.TakeDamage(_damageNumber);
+                Debug.Log("damaged enemy");
             }
         }
         yield return new WaitForSeconds(_attackCd);

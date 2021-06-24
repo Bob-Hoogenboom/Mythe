@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692702370490303175}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4935441532655313442}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 734405412159208656}
-  m_Layer: 10
+  - component: {fileID: 682083282018966439}
+  m_Layer: 0
   m_Name: DamageObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,6 +97,19 @@ Transform:
   m_Father: {fileID: 5652292241596870560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.91}
+--- !u!114 &682083282018966439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336352416518366348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7659503242d6cf4e991de849337b633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePoints: 1
 --- !u!1 &1471188743870517427
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +121,7 @@ GameObject:
   - component: {fileID: 8718240797014661197}
   - component: {fileID: 4961614197167845552}
   - component: {fileID: 3626212423890132522}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: LArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,8 +212,8 @@ MonoBehaviour:
   - {fileID: 6041129657911661546}
   - {fileID: 3473798115772089787}
   m_Bounds:
-    m_Center: {x: 0.0013531446, y: -0.00000071525574, z: 0}
-    m_Extent: {x: 1.0986631, y: 1.4799995, z: 0}
+    m_Center: {x: 0.0013443232, y: -0.00000071525574, z: 0}
+    m_Extent: {x: 1.0986549, y: 1.4799995, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &1566879444962457512
@@ -211,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3114605380963744969}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +258,7 @@ GameObject:
   - component: {fileID: 3970804496395111026}
   - component: {fileID: 1259887443746711032}
   - component: {fileID: 4716632171807398021}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +350,7 @@ MonoBehaviour:
   - {fileID: 3679737978524521071}
   - {fileID: 1450674191347891897}
   m_Bounds:
-    m_Center: {x: -0.00065004826, y: -0.00000071525574, z: 0}
+    m_Center: {x: -0.0006353855, y: -0.00000071525574, z: 0}
     m_Extent: {x: 1.0643649, y: 2.215, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -350,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478797268712139354}
   - component: {fileID: 7390802420838996587}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sword_Sprite_01_MYTHE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +447,7 @@ GameObject:
   - component: {fileID: 8929603362058362722}
   - component: {fileID: 6465814493447938713}
   - component: {fileID: 5037541601961378497}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: LLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,8 +537,8 @@ MonoBehaviour:
   - {fileID: 1850776440410781451}
   - {fileID: 6737478253477371174}
   m_Bounds:
-    m_Center: {x: -0.00000011920929, y: 0.0019493103, z: 0}
-    m_Extent: {x: 0.95500016, y: 1.9185994, z: 0}
+    m_Center: {x: -0.00000029802322, y: 0.0019495487, z: 0}
+    m_Extent: {x: 0.9549997, y: 1.9185994, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &3583258378353712785
@@ -536,7 +550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3679737978524521071}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4973343845426965542}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1450674191347891897}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3473798115772089787}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -659,7 +673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5803184427486190298}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +706,7 @@ GameObject:
   - component: {fileID: 8048083898568923571}
   - component: {fileID: 4039544892417004071}
   - component: {fileID: 7031673365150538950}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: RLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,8 +796,8 @@ MonoBehaviour:
   - {fileID: 6463236385905301857}
   - {fileID: 5803184427486190298}
   m_Bounds:
-    m_Center: {x: 0.00071030855, y: 0.004670143, z: 0}
-    m_Extent: {x: 0.78095025, y: 2.02033, z: 0}
+    m_Center: {x: 0.00071048737, y: 0.004670143, z: 0}
+    m_Extent: {x: 0.78094995, y: 2.02033, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &4570112995964064829
@@ -795,7 +809,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6041129657911661546}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -827,7 +841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7999115652336167769}
   - component: {fileID: 4126495255272880135}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Player_Sprite_MYTHE_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +899,7 @@ GameObject:
   - component: {fileID: 7511954322863396966}
   - component: {fileID: 6170676653357383464}
   - component: {fileID: 6829038702742810818}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,7 +988,7 @@ MonoBehaviour:
   - {fileID: 4935441532655313442}
   - {fileID: 2411154992128007909}
   m_Bounds:
-    m_Center: {x: 0.000114798546, y: -0.003811717, z: 0}
+    m_Center: {x: 0.0001296997, y: -0.0038107634, z: 0}
     m_Extent: {x: 0.8845501, y: 1.1718798, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -987,7 +1001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8243205877014568660}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3444053671346187308}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1049,7 +1063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7201629541494084359}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1079,7 +1093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6737478253477371174}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1110,7 +1124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6463236385905301857}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1141,7 +1155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5652292241596870560}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: SwordRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,7 +1187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1168597939611575354}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1204,7 +1218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6717120175115096336}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1236,7 +1250,7 @@ GameObject:
   - component: {fileID: 1258154836463270963}
   - component: {fileID: 1343990004754578811}
   - component: {fileID: 1522422231213964269}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: RArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1326,7 +1340,7 @@ MonoBehaviour:
   - {fileID: 3114605380963744969}
   - {fileID: 3444053671346187308}
   m_Bounds:
-    m_Center: {x: -0.0033293962, y: 0.0020942688, z: 0}
+    m_Center: {x: -0.0033448935, y: 0.0020942688, z: 0}
     m_Extent: {x: 0.9016545, y: 1.7379056, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1339,7 +1353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2411154992128007909}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,7 +1383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1850776440410781451}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: bone_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1439,7 +1453,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6219487, y: 2.9435296, z: 0.1}
+  m_Size: {x: 0.6219487, y: 2.9435296, z: 0.3}
   m_Center: {x: -0.08803131, y: 1.2, z: 0}
 --- !u!54 &8235401470843604875
 Rigidbody:
@@ -1485,7 +1499,7 @@ MonoBehaviour:
   _gravity: 0.5
   _fallMultiplier: 10
   _isGrounded: 1
-  _rayLength: 0.3
+  _rayLength: 0.35
   _colOffset: {x: 0.4, y: 0, z: 0}
 --- !u!114 &200176192
 MonoBehaviour:
@@ -1530,4 +1544,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26829346f4d52c44a516a23873a509e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 100
+  startHealth: 3
+  _hP: 100

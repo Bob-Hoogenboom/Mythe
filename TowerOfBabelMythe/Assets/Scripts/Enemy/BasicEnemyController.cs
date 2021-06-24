@@ -34,7 +34,9 @@ public class BasicEnemyController : MonoBehaviour
         frontRaycastOrigin,
         playerPosition;
 
-    [SerializeField] Rigidbody rigidbody;
+    [SerializeField] Rigidbody _rigidbody;
+
+    [SerializeField] GameObject _damageBox;
 
     Vector3 
         direction;
@@ -72,7 +74,7 @@ public class BasicEnemyController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //SwitchState(EnemyState.Hurt);
-            Debug.Log(direction.normalized.x);
+            //Debug.Log(direction.normalized.x);
         }
 
         groundDetected = Physics.Raycast(groundRaycastOrigin.position, Vector2.down, 0.5f);        
@@ -140,6 +142,7 @@ public class BasicEnemyController : MonoBehaviour
     {
         lungeStartTime = Time.time;
         lungeTimer = lungeDuration;
+        _damageBox.SetActive(false);
     }
 
     void UpdateAttackState()
@@ -147,8 +150,10 @@ public class BasicEnemyController : MonoBehaviour
         
         if (Time.time >= lungeStartTime + lungeWindupTime)
         {
+            //active damagebox
+
             animator.SetTrigger("Attack");
-            rigidbody.velocity = transform.right * lungeSpeed;
+            _rigidbody.velocity = transform.right * lungeSpeed;
             lungeTimer -= Time.deltaTime;
         }
 
@@ -160,6 +165,9 @@ public class BasicEnemyController : MonoBehaviour
 
     void ExitAttackState()
     {
+        //inactive damagebox
+        _damageBox.SetActive(true);
+
         animator.ResetTrigger("Attack");
         animator.SetTrigger("IdlePose");
         attackCooldownTimer = attackCooldown;
@@ -176,10 +184,10 @@ public class BasicEnemyController : MonoBehaviour
     
     void UpdateHurtState()
     {
-        rigidbody.velocity = new Vector3(direction.normalized.x * knockbackForce, 0, 0);
+        _rigidbody.velocity = new Vector3(direction.normalized.x * knockbackForce, 0, 0);
         if(Time.time >= knockBackStart + KnockBackDuration && groundDetected)
         {
-            rigidbody.velocity = new Vector3(0, 0, 0);
+            _rigidbody.velocity = new Vector3(0, 0, 0);
         }
         if (Time.time >= knockBackStart + KnockBackDuration + 0.2)
         {
@@ -198,7 +206,7 @@ public class BasicEnemyController : MonoBehaviour
     {
         if (groundDetected)
         {
-            rigidbody.velocity = new Vector3(0, 0, 0);
+            _rigidbody.velocity = new Vector3(0, 0, 0);
             SwitchState(EnemyState.Wander);
         }
     }
