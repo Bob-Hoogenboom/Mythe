@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 4768725618430388043}
   m_Layer: 9
   m_Name: Rat bastard
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,8 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d309e5d3f52a0124785fb4cc801e8771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1
   enemyController: {fileID: 6539429336063513847}
+  _enemyDamage: 0
 --- !u!114 &6539429336063513847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +255,7 @@ GameObject:
   - component: {fileID: 4818571738848378317}
   m_Layer: 0
   m_Name: DamageBox
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,8 +285,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4767151, y: 1, z: 1}
-  m_Center: {x: 0.34099245, y: 0, z: 0}
+  m_Size: {x: 1.4767151, y: 1.2458146, z: 1}
+  m_Center: {x: 0.34099245, y: 0.12290725, z: 0}
 --- !u!1001 &4195572943335345793
 PrefabInstance:
   m_ObjectHideFlags: 0

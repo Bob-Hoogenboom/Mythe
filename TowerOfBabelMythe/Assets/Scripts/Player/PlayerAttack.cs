@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] bool _attacking = false;
 
     [SerializeField] float _attackCd = .35f;
-    [SerializeField] int _damageNumber = 1;
+    [SerializeField] int _attackpower = 1;
 
     [SerializeField] Transform hitPoint;
     [SerializeField] float radius;
@@ -33,12 +33,14 @@ public class PlayerAttack : MonoBehaviour
 
             _attacking = true;
             Debug.Log(col.gameObject.name);
-            if (col.gameObject.tag == "Enemy")
+            if (col.gameObject.tag == "Enemy") //Sword hits enemy, enemy takes damage
             {
                 Enemy BEC = col.GetComponent<Enemy>();
-                BEC.TakeDamage(_damageNumber);
+                BEC.TakeDamage(_attackpower);
                 Debug.Log("damaged enemy");
             }
+
+
         }
         yield return new WaitForSeconds(_attackCd);
         _attacking = false;

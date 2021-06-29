@@ -20,7 +20,10 @@ public class BasicEnemyController : MonoBehaviour
         lungeTimer,
         attackCooldownTimer,
         knockBackStart;
-        
+
+    private int attackDamage = 1;
+
+
 
     public bool
         moveRight = true,
@@ -35,8 +38,8 @@ public class BasicEnemyController : MonoBehaviour
         playerPosition;
 
     [SerializeField] Rigidbody _rigidbody;
-
     [SerializeField] GameObject _damageBox;
+    [SerializeField] GameObject _playerDamageBox;
 
     Vector3 
         direction;
@@ -71,18 +74,24 @@ public class BasicEnemyController : MonoBehaviour
                 break;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //SwitchState(EnemyState.Hurt);
-            //Debug.Log(direction.normalized.x);
-        }
-
+        
         groundDetected = Physics.Raycast(groundRaycastOrigin.position, Vector2.down, 0.5f);        
     }
 
     void Start()
     {
         SwitchState(EnemyState.Falling);
+        _damageBox.SetActive(false);
+    }
+
+    private void OnCollisionEnter(Collision DamageCollission)
+    {
+        if(DamageCollission.collider == _playerDamageBox) //enemy hits player, Player takes damage
+        {
+            Health PC = GetComponent<Health>();
+            PC.TakeDamagePlayer(attackDamage);
+
+        }
     }
 
     //Wander---------------------
@@ -142,16 +151,18 @@ public class BasicEnemyController : MonoBehaviour
     {
         lungeStartTime = Time.time;
         lungeTimer = lungeDuration;
-        _damageBox.SetActive(false);
     }
+        
 
     void UpdateAttackState()
     {                
         
+
+
         if (Time.time >= lungeStartTime + lungeWindupTime)
         {
-            //active damagebox
 
+            _damageBox.SetActive(true);
             animator.SetTrigger("Attack");
             _rigidbody.velocity = transform.right * lungeSpeed;
             lungeTimer -= Time.deltaTime;
@@ -165,8 +176,7 @@ public class BasicEnemyController : MonoBehaviour
 
     void ExitAttackState()
     {
-        //inactive damagebox
-        _damageBox.SetActive(true);
+        _damageBox.SetActive(false);
 
         animator.ResetTrigger("Attack");
         animator.SetTrigger("IdlePose");
