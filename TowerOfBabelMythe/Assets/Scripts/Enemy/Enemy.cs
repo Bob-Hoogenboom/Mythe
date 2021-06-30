@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int health;
     [SerializeField] BasicEnemyController enemyController;
-    [SerializeField] private int _enemyDamage;
 
     void Update()
     {
@@ -27,12 +26,6 @@ public class Enemy : MonoBehaviour
         enemyController.SwitchState(BasicEnemyController.EnemyState.Hurt);
     }
 
-    public void DealDamage(int enemyDamage)
-    {
-        Health PC = GetComponent<Health>();
-        PC.TakeDamagePlayer(_enemyDamage);
-        Debug.Log("damaged Player");
-    }
 
     void Die()
     {

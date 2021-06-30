@@ -21,10 +21,6 @@ public class BasicEnemyController : MonoBehaviour
         attackCooldownTimer,
         knockBackStart;
 
-    private int attackDamage = 1;
-
-
-
     public bool
         moveRight = true,
         groundDetected,
@@ -32,14 +28,16 @@ public class BasicEnemyController : MonoBehaviour
         playerDetected;
 
 
+    [SerializeField] private int attackDamage = 1;
+
     [SerializeField] Transform
         groundRaycastOrigin,
         frontRaycastOrigin,
         playerPosition;
 
     [SerializeField] Rigidbody _rigidbody;
-    [SerializeField] GameObject _damageBox;
-    [SerializeField] GameObject _playerDamageBox;
+    [SerializeField] GameObject _damageBox; //gives Damage to Player
+
 
     Vector3 
         direction;
@@ -84,15 +82,19 @@ public class BasicEnemyController : MonoBehaviour
         _damageBox.SetActive(false);
     }
 
-    private void OnCollisionEnter(Collision DamageCollission)
-    {
-        if(DamageCollission.collider == _playerDamageBox) //enemy hits player, Player takes damage
-        {
-            Health PC = GetComponent<Health>();
-            PC.TakeDamagePlayer(attackDamage);
 
+    private void OnTriggerEnter(Collider collider)
+    {
+        Debug.Log("Enemy collides with: " + collider.gameObject.name);
+        if (collider.gameObject.tag == "Player") //enemy hits player, Player takes damage
+        {
+            Debug.Log("COLLISSION!!!!");
+            Health PC = collider.GetComponent<Health>();
+            PC.TakeDamagePlayer(attackDamage);
         }
     }
+
+
 
     //Wander---------------------
 
@@ -112,7 +114,7 @@ public class BasicEnemyController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(wallDetector, out hit, 0.1f))
         {
-            Debug.Log(hit.collider.gameObject.tag);
+            /*Debug.Log(hit.collider.gameObject.tag);*/
             if (hit.collider.gameObject.tag == "Terrain")
             {
                 Flip();

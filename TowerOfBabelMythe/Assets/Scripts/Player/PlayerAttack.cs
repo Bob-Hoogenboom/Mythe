@@ -35,9 +35,9 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log(col.gameObject.name);
             if (col.gameObject.tag == "Enemy") //Sword hits enemy, enemy takes damage
             {
+                Debug.Log("damaged enemy");
                 Enemy BEC = col.GetComponent<Enemy>();
                 BEC.TakeDamage(_attackpower);
-                Debug.Log("damaged enemy");
             }
 
 

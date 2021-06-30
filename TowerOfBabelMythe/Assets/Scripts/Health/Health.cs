@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamagePlayer(int enemyDamage) // public so the enemy can deal damage to the Player
     {
-        currentHealth =- enemyDamage;
+        currentHealth -= enemyDamage;
         Debug.Log("damaged Player");
     }
 
