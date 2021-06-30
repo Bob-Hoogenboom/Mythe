@@ -20,7 +20,7 @@ TagManager:
   - Ground
   - Enemy
   - Player
-  - 
+  - foreground
   - 
   - 
   - 
@@ -44,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: foreground
+    uniqueID: 3685133631
     locked: 0

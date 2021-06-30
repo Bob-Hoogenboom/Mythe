@@ -182,7 +182,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   enemyController: {fileID: 6539429336063513847}
-  _enemyDamage: 0
 --- !u!114 &6539429336063513847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +206,7 @@ MonoBehaviour:
   groundDetected: 0
   wallDetected: 0
   playerDetected: 0
+  attackDamage: 1
   groundRaycastOrigin: {fileID: 4768725618189445153}
   frontRaycastOrigin: {fileID: 4768725617889824432}
   playerPosition: {fileID: 0}
@@ -318,6 +318,10 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Extent.y
       value: 1.1299999
       objectReference: {fileID: 0}
+    - target: {fileID: -7622828746186836983, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba887420cefa54b48918a03b16175413, type: 2}
     - target: {fileID: -7179367034638042675, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -350,6 +354,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: -6101247130527787787, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba887420cefa54b48918a03b16175413, type: 2}
+    - target: {fileID: -5402119194423526248, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba887420cefa54b48918a03b16175413, type: 2}
     - target: {fileID: -4941393068223380248, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -382,6 +394,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 268153211485989568, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba887420cefa54b48918a03b16175413, type: 2}
     - target: {fileID: 424357097723156051, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -410,6 +426,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1657352221266406430, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba887420cefa54b48918a03b16175413, type: 2}
     - target: {fileID: 1949376678803438876, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
       propertyPath: m_Name
       value: Rat visuals
@@ -418,6 +438,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2034835302586215227, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba887420cefa54b48918a03b16175413, type: 2}
     - target: {fileID: 2294119237887919301, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -566,6 +590,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 7457653198458463780, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba887420cefa54b48918a03b16175413, type: 2}
     - target: {fileID: 8775568310762914067, guid: 1af13202d88eb43ec9ac8eb02c5b1e2b, type: 3}
       propertyPath: m_Layer
       value: 9
