@@ -783,6 +783,10 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2252887831956707520, guid: 3affb12cf95bb8e4e842c9ff778ae0ce, type: 3}
+      propertyPath: _fadeSpeed
+      value: 0.00703
+      objectReference: {fileID: 0}
     - target: {fileID: 2252887831956707521, guid: 3affb12cf95bb8e4e842c9ff778ae0ce, type: 3}
       propertyPath: m_Name
       value: FadeSystem

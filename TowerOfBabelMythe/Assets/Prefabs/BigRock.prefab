@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1048086909132658608}
   - component: {fileID: 4117511517758937109}
   - component: {fileID: 2215948729604189407}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5005362444495218225}
-  m_Layer: 0
+  - component: {fileID: 3601257856255326959}
+  m_Layer: 8
   m_Name: BigRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,3 +113,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3601257856255326959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799061448202236450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.984085, y: 4.101713, z: 8.114473}
+  m_Center: {x: 0.014517784, y: -0.28762817, z: 0.014134407}

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5364840851642970805}
   - component: {fileID: 9069235632720706832}
   - component: {fileID: 6501107175907199450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,9 +90,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5700061400671877971}
-  m_Layer: 0
+  - component: {fileID: 7219160466332307854}
+  m_Layer: 8
   m_Name: MediumRock
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,3 +113,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7219160466332307854
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361813744153457012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.6470008, y: 2.297707, z: 3.7459974}
+  m_Center: {x: -0.02289176, y: -0.18082309, z: -0.31978226}
