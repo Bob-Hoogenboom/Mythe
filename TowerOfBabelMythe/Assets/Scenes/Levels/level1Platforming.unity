@@ -372,11 +372,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!4 &419059864 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4689430923094223045, guid: 3622a1ef9813e8e4aa86944d41fc8cda, type: 3}
-  m_PrefabInstance: {fileID: 1763494786}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &478648227
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,36 +640,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 484248816102240234, guid: 3c079b668d658f74a9875f6fad6789a8, type: 3}
   m_PrefabInstance: {fileID: 752640401}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &853998845
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 853998846}
-  m_Layer: 0
-  m_Name: FollowPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &853998846
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853998845}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.42, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 419059864}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &927106106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1360,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7754038924456746a743446831d4b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 853998845}
+  targetObject: {fileID: 0}
   followOffset: {x: 15, y: 7}
   speed: 7.5
 --- !u!114 &1373975706

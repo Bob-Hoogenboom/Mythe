@@ -17,7 +17,7 @@ namespace Assets.Scripts.GameManager
         private int _currentLevelIndex;
         private GameState currentState = GameState.MainMenu;
         public float requestedTime;
-
+            
         private void Start()
         {
             DontDestroySetUp();
