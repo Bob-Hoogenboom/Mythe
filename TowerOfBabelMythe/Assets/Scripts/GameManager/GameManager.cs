@@ -68,7 +68,7 @@ namespace Assets.Scripts.GameManager
             LevelManager loadingLevel = FindObjectOfType<LevelManager>();
             Debug.Log(loadingLevel);
             loadingLevel.onLevelCompletion += OnLevelCompletion;
-            loadingLevel.CountingEnemies();
+/*            loadingLevel.CountingEnemies();*/
             _currentLevelIndex = targetLevel.index;
 
             yield return fadeManger.StartCoroutine(fadeManger.FadeScreenIn(fadeManger._fadeSpeed));

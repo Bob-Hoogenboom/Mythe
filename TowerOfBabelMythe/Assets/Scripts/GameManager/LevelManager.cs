@@ -11,33 +11,32 @@ namespace Assets.Scripts.GameManager
 
         private void Awake()
         {
-            enemyCount = CountingEnemies();
+/*            enemyCount = CountingEnemies();*/
             Debug.Log(enemyCount);
         }
 
-        public int CountingEnemies()
+/*        public int CountingEnemies()
         {
-            /*            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-                        foreach(GameObject enemy in enemies)
-                        {
-                            enemy.GetComponent<TempScripts.EnemyTemp>().onDestroy += OnEnemyDestroy;
-                        }
+            foreach(GameObject enemy in enemies)
+            {
+                enemy.GetComponent<TempScripts.EnemyTemp>().onDestroy += OnEnemyDestroy;
+            }
 
-                        double i = 0;
-                        i = enemies.Length * 0.8;
-                        return (int)Math.Ceiling(i);*/
-            return 0;
-        }
+            double i = 0;
+            i = enemies.Length * 0.8;
+            return (int)Math.Ceiling(i);
+        }*/
 
         private void OnEnemyDestroy()
         {
-/*            enemyCount--;
+            enemyCount--;
             if (enemyCount <= 0 && !_isDoorOpen)
             {
                 _isDoorOpen = true;
                 OpenDoor();
-            }*/
+            }
         }
 
         private void OpenDoor()

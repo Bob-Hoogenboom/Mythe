@@ -44,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
         }
         yield return new WaitForSeconds(_attackCd);
         _attacking = false;
-        //_anime.ResetTrigger("attacking");
+        _anime.ResetTrigger("attacking");
         yield return null; 
     }
 
