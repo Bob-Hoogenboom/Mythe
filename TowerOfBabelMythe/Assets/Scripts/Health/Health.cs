@@ -19,9 +19,11 @@ public class Health : MonoBehaviour
         Debug.Log("damaged Player");
     }
 
-    void Death()
+    public void Death()
     {
         Destroy (gameObject);
+        Assets.Scripts.GameManager.GameManager gm = FindObjectOfType<Assets.Scripts.GameManager.GameManager>();
+        gm.StartCoroutine("LoadLevel", gm.levelDatas[0]);
     }
 
 }

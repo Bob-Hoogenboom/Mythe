@@ -8,7 +8,8 @@ namespace Assets.Scripts.GameManager
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] LevelData[] levelDatas;
+        [SerializeField]
+        public LevelData[] levelDatas;
         Ui.FadeManger fadeManger;
         Timer timer;
         LevelLoader levelLoader;
@@ -27,6 +28,15 @@ namespace Assets.Scripts.GameManager
             };
             InitialFadeIn();
             UpdateState(GameState.MainMenu);
+            FindObjectOfType<AudioManager>().Play(SoundLibrary.Sounds.BGM);
+        }
+
+        private void Update()
+        {
+           if(Input.GetKeyDown(KeyCode.R))
+            {
+                StartCoroutine("LoadLevel", levelDatas[0]);
+            }
         }
 
         private void UpdateState(GameState newState)
@@ -60,7 +70,6 @@ namespace Assets.Scripts.GameManager
 
             UpdateState(GameState.Loading);
 
-            timer.currentTime = requestedTime + 1;
             yield return fadeManger.StartCoroutine(fadeManger.FadeScreenOut(fadeManger._fadeSpeed));
 
             yield return levelLoader.StartCoroutine(levelLoader.LoadScene(targetLevel.level));
@@ -83,6 +92,7 @@ namespace Assets.Scripts.GameManager
         public void LoadFirstLevel()
         {
             StartCoroutine("LoadLevel", levelDatas[0]);
+            timer.currentTime = requestedTime + 1;
         }
 
         private void DontDestroySetUp()

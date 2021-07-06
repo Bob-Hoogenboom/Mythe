@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
     
     public void Play(Sounds name)
     {
-       Sound s = Array.Find(sounds, sound => sound.name == name);
+        Sound s = Array.Find(sounds, sound => sound.name == name);
         Debug.Log(s.ToString());
         if (s == null) return;
         s.source.Play();

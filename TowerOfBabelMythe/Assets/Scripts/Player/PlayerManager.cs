@@ -19,22 +19,6 @@ public class PlayerManager : MonoBehaviour
             controlScript.enabled = value;
         }
     }
-    private int _health;
-    public int health
-    {
-        get
-        {
-            return _health;
-        }
-        set
-        {
-            _health = value;
-            if (_health >= 0)
-            {
-                Die();
-            }
-        }
-    }
     public bool atDoor = false;
 
     private void Awake()
@@ -49,11 +33,5 @@ public class PlayerManager : MonoBehaviour
             FindObjectOfType<Assets.Scripts.GameManager.LevelManager>().onLevelCompletion();
             atDoor = false;
         }
-    }
-
-    public void Die()
-    {
-        //I fuckin' died;
-        Debug.Log("Ded");
     }
 }
