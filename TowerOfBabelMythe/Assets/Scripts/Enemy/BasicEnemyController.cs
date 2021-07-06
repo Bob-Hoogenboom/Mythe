@@ -100,7 +100,7 @@ public class BasicEnemyController : MonoBehaviour
 
     void EnterWanderState()
     {
-        animator.SetBool("IsWalking", true);               
+        animator.SetBool("IsWalking", true);
     }
 
     void UpdateWanderState()
@@ -143,7 +143,7 @@ public class BasicEnemyController : MonoBehaviour
 
     void ExitWanderState()
     {
-        animator.ResetTrigger("IdlePose");
+/*        animator.SetTrigger("IdlePose");*/
         animator.SetBool("IsWalking", false);        
     }
 
@@ -181,17 +181,17 @@ public class BasicEnemyController : MonoBehaviour
         _damageBox.SetActive(false);
 
         animator.ResetTrigger("Attack");
-        animator.SetTrigger("IdlePose");
+/*        animator.SetTrigger("IdlePose");*/
         attackCooldownTimer = attackCooldown;
     }
 
     //Hurt_+_+_+_+_+_+_+_+_+_+_+_+_
     void EnterHurtState()
     {
-        animator.ResetTrigger("IdlePose");
+/*        animator.ResetTrigger("IdlePose");*/
         direction = (this.transform.position - GameObject.FindGameObjectWithTag("Player").transform.position).normalized;
         knockBackStart = Time.time;
-        animator.SetTrigger("IdlePose");
+/*        animator.SetTrigger("IdlePose");*/
     }
     
     void UpdateHurtState()

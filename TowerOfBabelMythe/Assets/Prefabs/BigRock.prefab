@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 3601257856255326959}
   m_Layer: 8
   m_Name: BigRock
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
