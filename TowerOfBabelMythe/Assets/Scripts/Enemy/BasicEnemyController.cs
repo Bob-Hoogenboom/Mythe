@@ -20,6 +20,7 @@ public class BasicEnemyController : MonoBehaviour
         lungeTimer,
         attackCooldownTimer,
         knockBackStart;
+        
 
     public bool
         moveRight = true,
@@ -28,16 +29,12 @@ public class BasicEnemyController : MonoBehaviour
         playerDetected;
 
 
-    [SerializeField] private int attackDamage = 1;
-
     [SerializeField] Transform
         groundRaycastOrigin,
         frontRaycastOrigin,
         playerPosition;
 
-    [SerializeField] Rigidbody _rigidbody;
-    [SerializeField] GameObject _damageBox; //gives Damage to Player
-
+    [SerializeField] Rigidbody rigidbody;
 
     Vector3 
         direction;
@@ -72,29 +69,24 @@ public class BasicEnemyController : MonoBehaviour
                 break;
         }
 
-        
+<<<<<<< Updated upstream
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //SwitchState(EnemyState.Hurt);
+            Debug.Log(direction.normalized.x);
+        }
+
         groundDetected = Physics.Raycast(groundRaycastOrigin.position, Vector2.down, 0.5f);        
+=======
+        
+        groundDetected = Physics.Raycast(groundRaycastOrigin.position, Vector2.down, 0.7f);        
+>>>>>>> Stashed changes
     }
 
     void Start()
     {
         SwitchState(EnemyState.Falling);
-        _damageBox.SetActive(false);
     }
-
-
-    private void OnTriggerEnter(Collider collider)
-    {
-        Debug.Log("Enemy collides with: " + collider.gameObject.name);
-        if (collider.gameObject.tag == "Player") //enemy hits player, Player takes damage
-        {
-            Debug.Log("COLLISSION!!!!");
-            Health PC = collider.GetComponent<Health>();
-            PC.TakeDamagePlayer(attackDamage);
-        }
-    }
-
-
 
     //Wander---------------------
 
@@ -114,7 +106,7 @@ public class BasicEnemyController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(wallDetector, out hit, 0.1f))
         {
-            /*Debug.Log(hit.collider.gameObject.tag);*/
+            Debug.Log(hit.collider.gameObject.tag);
             if (hit.collider.gameObject.tag == "Terrain")
             {
                 Flip();
@@ -154,19 +146,14 @@ public class BasicEnemyController : MonoBehaviour
         lungeStartTime = Time.time;
         lungeTimer = lungeDuration;
     }
-        
 
     void UpdateAttackState()
     {                
         
-
-
         if (Time.time >= lungeStartTime + lungeWindupTime)
         {
-
-            _damageBox.SetActive(true);
             animator.SetTrigger("Attack");
-            _rigidbody.velocity = transform.right * lungeSpeed;
+            rigidbody.velocity = transform.right * lungeSpeed;
             lungeTimer -= Time.deltaTime;
         }
 
@@ -178,8 +165,6 @@ public class BasicEnemyController : MonoBehaviour
 
     void ExitAttackState()
     {
-        _damageBox.SetActive(false);
-
         animator.ResetTrigger("Attack");
         animator.SetTrigger("IdlePose");
         attackCooldownTimer = attackCooldown;
@@ -196,10 +181,10 @@ public class BasicEnemyController : MonoBehaviour
     
     void UpdateHurtState()
     {
-        _rigidbody.velocity = new Vector3(direction.normalized.x * knockbackForce, 0, 0);
+        rigidbody.velocity = new Vector3(direction.normalized.x * knockbackForce, 0, 0);
         if(Time.time >= knockBackStart + KnockBackDuration && groundDetected)
         {
-            _rigidbody.velocity = new Vector3(0, 0, 0);
+            rigidbody.velocity = new Vector3(0, 0, 0);
         }
         if (Time.time >= knockBackStart + KnockBackDuration + 0.2)
         {
@@ -218,7 +203,7 @@ public class BasicEnemyController : MonoBehaviour
     {
         if (groundDetected)
         {
-            _rigidbody.velocity = new Vector3(0, 0, 0);
+            rigidbody.velocity = new Vector3(0, 0, 0);
             SwitchState(EnemyState.Wander);
         }
     }
