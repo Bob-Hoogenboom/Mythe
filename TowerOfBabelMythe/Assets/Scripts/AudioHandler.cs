@@ -13,7 +13,7 @@ namespace Assets.Scripts
             _audioManager = FindObjectOfType<AudioManager>();
         }
 
-        private void Play(Sounds sound)
+        public void Play(Sounds sound)
         {
             _audioManager.Play(sound);
         }
