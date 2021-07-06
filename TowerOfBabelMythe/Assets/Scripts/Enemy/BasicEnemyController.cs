@@ -34,7 +34,7 @@ public class BasicEnemyController : MonoBehaviour
         frontRaycastOrigin,
         playerPosition;
 
-    [SerializeField] Rigidbody rigidbody;
+    [SerializeField] Rigidbody _rb;
 
     Vector3 
         direction;
@@ -69,18 +69,14 @@ public class BasicEnemyController : MonoBehaviour
                 break;
         }
 
-<<<<<<< Updated upstream
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //SwitchState(EnemyState.Hurt);
             Debug.Log(direction.normalized.x);
         }
 
-        groundDetected = Physics.Raycast(groundRaycastOrigin.position, Vector2.down, 0.5f);        
-=======
-        
-        groundDetected = Physics.Raycast(groundRaycastOrigin.position, Vector2.down, 0.7f);        
->>>>>>> Stashed changes
+        groundDetected = Physics.Raycast(groundRaycastOrigin.position, Vector2.down, 0.5f);           
     }
 
     void Start()
@@ -153,7 +149,7 @@ public class BasicEnemyController : MonoBehaviour
         if (Time.time >= lungeStartTime + lungeWindupTime)
         {
             animator.SetTrigger("Attack");
-            rigidbody.velocity = transform.right * lungeSpeed;
+            _rb.velocity = transform.right * lungeSpeed;
             lungeTimer -= Time.deltaTime;
         }
 
@@ -181,10 +177,10 @@ public class BasicEnemyController : MonoBehaviour
     
     void UpdateHurtState()
     {
-        rigidbody.velocity = new Vector3(direction.normalized.x * knockbackForce, 0, 0);
+        _rb.velocity = new Vector3(direction.normalized.x * knockbackForce, 0, 0);
         if(Time.time >= knockBackStart + KnockBackDuration && groundDetected)
         {
-            rigidbody.velocity = new Vector3(0, 0, 0);
+            _rb.velocity = new Vector3(0, 0, 0);
         }
         if (Time.time >= knockBackStart + KnockBackDuration + 0.2)
         {
@@ -203,7 +199,7 @@ public class BasicEnemyController : MonoBehaviour
     {
         if (groundDetected)
         {
-            rigidbody.velocity = new Vector3(0, 0, 0);
+            _rb.velocity = new Vector3(0, 0, 0);
             SwitchState(EnemyState.Wander);
         }
     }
