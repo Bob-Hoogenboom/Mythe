@@ -69,6 +69,7 @@ public class BasicEnemyController : MonoBehaviour
                 break;
         }
 
+<<<<<<< Updated upstream
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //SwitchState(EnemyState.Hurt);
@@ -76,6 +77,10 @@ public class BasicEnemyController : MonoBehaviour
         }
 
         groundDetected = Physics.Raycast(groundRaycastOrigin.position, Vector2.down, 0.5f);        
+=======
+        
+        groundDetected = Physics.Raycast(groundRaycastOrigin.position, Vector2.down, 0.7f);        
+>>>>>>> Stashed changes
     }
 
     void Start()
