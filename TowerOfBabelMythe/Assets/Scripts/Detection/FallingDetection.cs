@@ -9,7 +9,7 @@ public class FallingDetection : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Debug.Log(other.name);
-            other.GetComponent<PlayerManager>().Die();
+            other.GetComponent<Health>().Death();
         }
     }
 }

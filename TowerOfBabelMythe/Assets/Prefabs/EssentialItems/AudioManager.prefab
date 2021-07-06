@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6074811042082306273}
   - component: {fileID: 7556462723462958144}
+  - component: {fileID: 5570578476686129770}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -58,25 +59,37 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: 3
     isLooping: 0
-    clip: {fileID: 8300000, guid: 88547fe82cc34284b9fdc0826a8097a0, type: 3}
+    clip: {fileID: 8300000, guid: 6fc6539634fc92748ac5591ed29aeae8, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
   - name: 6
     isLooping: 0
-    clip: {fileID: 8300000, guid: b7a75bc0873aa7e448e7af398e5d9ddc, type: 3}
+    clip: {fileID: 8300000, guid: 1df746676fef6cc48969fe6fbfdc65fc, type: 3}
     volume: 0.2
     pitch: 1
     source: {fileID: 0}
   - name: 4
     isLooping: 0
-    clip: {fileID: 8300000, guid: 6fc6539634fc92748ac5591ed29aeae8, type: 3}
+    clip: {fileID: 8300000, guid: 31db6ef439331b14d8fb00bb8ed05843, type: 3}
     volume: 0.4
     pitch: 1
     source: {fileID: 0}
   - name: 5
-    isLooping: 0
-    clip: {fileID: 8300000, guid: 31db6ef439331b14d8fb00bb8ed05843, type: 3}
-    volume: 0.5
+    isLooping: 1
+    clip: {fileID: 8300000, guid: b7a75bc0873aa7e448e7af398e5d9ddc, type: 3}
+    volume: 0.2
     pitch: 1
     source: {fileID: 0}
+--- !u!114 &5570578476686129770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229679449074197964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb5adcaecb5b5da4aa77a86bbafe9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
