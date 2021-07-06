@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6229679449074197964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6074811042082306273}
+  - component: {fileID: 7556462723462958144}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6074811042082306273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229679449074197964}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.8400002, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7556462723462958144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229679449074197964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6463c23e186dc554fa6521634b72e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: 0
+    isLooping: 0
+    clip: {fileID: 8300000, guid: d6ec7a0341f8a894f83c03e14eb14771, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+  - name: 1
+    isLooping: 0
+    clip: {fileID: 8300000, guid: b57d4e02738a5c04ab61cef6c35b6d6b, type: 3}
+    volume: 0.04
+    pitch: 1
+    source: {fileID: 0}
+  - name: 3
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 88547fe82cc34284b9fdc0826a8097a0, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: 6
+    isLooping: 0
+    clip: {fileID: 8300000, guid: b7a75bc0873aa7e448e7af398e5d9ddc, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: 4
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 6fc6539634fc92748ac5591ed29aeae8, type: 3}
+    volume: 0.4
+    pitch: 1
+    source: {fileID: 0}
+  - name: 5
+    isLooping: 0
+    clip: {fileID: 8300000, guid: 31db6ef439331b14d8fb00bb8ed05843, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
